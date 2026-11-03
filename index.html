@@ -1,0 +1,250 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Eniola Akinola Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single centered column; intro, then a two-up project grid, then about + contact. */
+:root {
+  --bg: #f4f7f6;
+  --surface: #ffffff;
+  --fg: #16231f;
+  --muted: #5b6b66;
+  --line: #d6e0dc;
+  --accent: #0f7a6c;
+  --accent-soft: #e0f0ec;
+  --placeholder: #eaf0ee;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1614; --surface: #16201d; --fg: #e4ece9; --muted: #9aaba5;
+    --line: #2a3733; --accent: #4fc4b1; --accent-soft: #1b2e2a; --placeholder: #1c2724;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1614; --surface: #16201d; --fg: #e4ece9; --muted: #9aaba5;
+  --line: #2a3733; --accent: #4fc4b1; --accent-soft: #1b2e2a; --placeholder: #1c2724;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-block: 32px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* Nav */
+nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.mark { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+.navlinks { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
+.navlinks a { color: var(--muted); text-decoration: none; }
+.navlinks a:hover { color: var(--fg); }
+
+/* Intro */
+.intro { display: flex; flex-direction: column; gap: 18px; max-width: 720px; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(36px, 7vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: balance;
+}
+.lede { font-size: 18px; color: var(--muted); margin: 0; max-width: 62ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-family: var(--font-mono); font-size: 12px; padding: 4px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+
+/* Sections */
+section { display: flex; flex-direction: column; gap: 24px; }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: 28px; letter-spacing: -0.01em; margin: 0; }
+.hint { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+/* Projects */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 24px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.shot {
+  aspect-ratio: 16 / 10;
+  max-width: 100%;
+  background: var(--placeholder);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-align: center;
+  padding: 16px;
+}
+.card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.kind { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+h3 { font-family: var(--font-display); font-weight: 600; font-size: 21px; margin: 0; line-height: 1.2; }
+.card p { margin: 0; color: var(--muted); font-size: 15px; }
+.tools { display: flex; flex-wrap: wrap; gap: 6px; }
+.tool { font-family: var(--font-mono); font-size: 11.5px; padding: 2px 8px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); }
+.actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; font-size: 14px; font-weight: 600; }
+.actions span { color: var(--muted); font-weight: 500; }
+
+/* About + contact */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.split > div { min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.split p { margin: 0; color: var(--muted); max-width: 62ch; }
+.contact-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.contact-list li { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; }
+.contact-list .label { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); min-width: 80px; }
+.contact-list .val { user-select: all; word-break: break-all; }
+
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 18px; }
+
+@media (max-width: 700px) {
+  .wrap { gap: 56px; }
+  .split { grid-template-columns: 1fr; gap: 32px; }
+}
+</style>
+
+<div class="wrap">
+  <nav>
+    <span class="mark">Eniola Akinola</span>
+    <div class="navlinks">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="step-through/">Step Through</a>
+    </div>
+  </nav>
+
+  <header class="intro">
+    <span class="eyebrow">Software Engineering · WSU · Class of 2027</span>
+    <h1>Building software that makes care easier.</h1>
+    <p class="lede">[Intro: two or three sentences about who you are, what you build, and why healthcare. Fill this in later.]</p>
+    <div class="chips">
+      <span class="chip">Python</span>
+      <span class="chip">C / C++</span>
+      <span class="chip">C#</span>
+      <span class="chip">Java</span>
+      <span class="chip">SQL</span>
+      <span class="chip">Embedded</span>
+    </div>
+  </header>
+
+  <section id="projects">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <span class="hint">Screenshots and write-ups coming soon</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="shot">Screenshot: app running</div>
+        <div class="card-body">
+          <span class="kind">Software · Database</span>
+          <h3>Yelp Database Application</h3>
+          <p>[What problem it solves and what you built.]</p>
+          <div class="tools"><span class="tool">Python</span><span class="tool">PyQt5</span><span class="tool">PostgreSQL</span></div>
+          <div class="actions"><a href="#projects">Read case study</a><span>Code on request</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="shot">Screenshot: spreadsheet in use</div>
+        <div class="card-body">
+          <span class="kind">Software · Desktop</span>
+          <h3>Spreadsheet Application</h3>
+          <p>[What problem it solves and what you built.]</p>
+          <div class="tools"><span class="tool">C#</span><span class="tool">WinForms</span><span class="tool">NUnit</span></div>
+          <div class="actions"><a href="#projects">Read case study</a><span>Code on request</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="shot">Photo: board and LCD</div>
+        <div class="card-body">
+          <span class="kind">Hardware · Embedded</span>
+          <h3>LCD Display on a PIC Microcontroller</h3>
+          <p>[What problem it solves and what you built.]</p>
+          <div class="tools"><span class="tool">C</span><span class="tool">PIC16F877A</span><span class="tool">I²C</span></div>
+          <div class="actions"><a href="#projects">Read case study</a><span>Code on request</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="shot">Photo: finished lamp</div>
+        <div class="card-body">
+          <span class="kind">Hardware · Workshop</span>
+          <h3>Soldered Desk Lamp</h3>
+          <p>[What you built and how.]</p>
+          <div class="tools"><span class="tool">Soldering</span><span class="tool">LED</span><span class="tool">Coin cell</span></div>
+          <div class="actions"><a href="#projects">Read case study</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="shot">Sketch or prototype photo</div>
+        <div class="card-body">
+          <span class="kind">Research · In progress</span>
+          <h3>Fall Risk Detection Bracelet</h3>
+          <p>[The problem, your idea, and where it stands.]</p>
+          <div class="tools"><span class="tool">Sensors</span><span class="tool">Embedded</span></div>
+          <div class="actions"><a href="#projects">Read case study</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="shot">Screenshot or photo</div>
+        <div class="card-body">
+          <span class="kind">[Category]</span>
+          <h3>[Next Project]</h3>
+          <p>[What problem it solves and what you built.]</p>
+          <div class="tools"><span class="tool">[Tool]</span><span class="tool">[Tool]</span></div>
+          <div class="actions"><a href="#projects">Read case study</a><a href="#projects">View code</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-head"><h2>About</h2></div>
+    <div class="split">
+      <div>
+        <p>[Your story: CNA work, why you chose software engineering, and the kind of problems you want to solve.]</p>
+      </div>
+      <div>
+        <p>[What you're looking for: new-grad roles starting 2027, healthcare software, embedded systems.]</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head"><h2>Contact</h2></div>
+    <ul class="contact-list">
+      <li><span class="label">Email</span><span class="val">eniolaakinola2001@gmail.com</span></li>
+      <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/eniola-akinola-659167354">linkedin.com/in/eniola-akinola-659167354</a></li>
+      <li><span class="label">GitHub</span><a href="https://github.com/EniolaAkinola">github.com/EniolaAkinola</a></li>
+      <li><span class="label">Resume</span><span class="val">[Add resume link]</span></li>
+    </ul>
+  </section>
+
+  <footer>© 2026 Eniola Akinola</footer>
+</div>
+
+</body></html>
